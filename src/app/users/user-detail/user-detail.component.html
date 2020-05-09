@@ -1,5 +1,7 @@
 <h1 style="text-align: center">User Details</h1>
 
+<button routerLink="/users">Back to Users List</button>
+
 <div *ngIf="user$ | async as user">
     <p>{{ user.firstName }}</p>
     <p>{{ user.lastName }}</p>
