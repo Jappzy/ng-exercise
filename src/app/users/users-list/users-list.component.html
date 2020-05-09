@@ -1,5 +1,8 @@
-<ul>
-    <li *ngFor="let user of users$ | async" [routerLink]="user.id" style="cursor: pointer;">
+<ul class="list">
+    <li
+        *ngFor="let user of users$ | async"
+        [routerLink]="user.id"
+        class="list-item">
         {{ user.firstName }} {{ user.lastName }}
     </li>
 </ul>

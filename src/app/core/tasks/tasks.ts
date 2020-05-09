@@ -20,9 +20,9 @@ const tasks: Array<Task> = [
     The url should contain the user id.
     There should be a back button on the user detail page so one can go back to the user list page.
     The properties to be shown should include:
-    Avatar, First Name, Last Name and Email
+    Avatar, First Name, Last Name and Email. Here is a link to the user page: {{link}}
   `,
-    routerLinks: ["home"]
+    routerLinks: ["users"]
   },
   {
     description: `
