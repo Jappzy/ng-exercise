@@ -1,0 +1,86 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.header > * {
+    justify-self: center;
+    align-self: center;
+}
+
+.user-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 90%;
+    max-width: 400px;
+    margin: 2em auto;
+    border-radius: 10px;
+    border: 2px solid black;
+    overflow: hidden;
+    box-shadow: 2px 8px 16px 0px #acacac;
+}
+
+
+
+
+
+// Logo Spin Animation :)
+
+.svg-logo {
+    cursor: pointer;
+}
+
+.svg-logo:not(:hover) .leftfill.path_bottom,
+.svg-logo:not(:hover) .leftfill.path_top,
+.svg-logo:not(:hover) .rightfill.path_bottom,
+.svg-logo:not(:hover) .rightfill.path_top,
+.svg-logo:not(:hover) .topfill.path_bottom,
+.svg-logo:not(:hover) .topfill.path_top {
+  fill: black;
+  transition-duration: 1s;
+}
+
+.svg-logo:hover .rightfill {
+    animation: rightSpin 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) 0s 1;
+  }
+  
+.svg-logo:hover .leftfill {
+    animation: leftSpin 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) 0s 1 reverse;
+}
+
+.svg-logo:hover .topfill {
+    animation: topSpin 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) 0s 1 reverse;
+}
+
+@keyframes rightSpin {
+    from {
+      transform: rotate(0deg);
+      transform-origin: 50% 75%;
+    }
+    to {
+      transform: rotate(360deg);
+      transform-origin: 50% 75%;
+    }
+  }
+  
+  @keyframes leftSpin {
+    from {
+      transform: rotate(0deg);
+      transform-origin: 0% 75%;
+    }
+    to {
+      transform: rotate(360deg);
+      transform-origin: 0% 75%;
+    }
+  }
+  
+  @keyframes topSpin {
+    from {
+      transform: rotate(-360deg);
+      transform-origin: 25% 25%;
+    }
+    to {
+      transform: rotate(0deg);
+      transform-origin: 25% 25%;
+    }
+  }
