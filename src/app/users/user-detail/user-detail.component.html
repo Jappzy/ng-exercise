@@ -1,0 +1,8 @@
+<h1 style="text-align: center">User Details</h1>
+
+<div *ngIf="user$ | async as user">
+    <p>{{ user.firstName }}</p>
+    <p>{{ user.lastName }}</p>
+    <p>{{ user.email }}</p>
+    <img [src]="user.avatar" [alt]="user.first_name + ' Avatar'">
+</div>

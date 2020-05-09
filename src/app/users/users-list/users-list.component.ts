@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
+import { User } from 'src/app/core/models/user.model';
 
 @Component({
   selector: 'app-users-list',
@@ -8,7 +9,7 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./users-list.component.scss']
 })
 export class UsersListComponent implements OnInit {
-  users$: Observable<any[]>;
+  users$: Observable<User[]>;
 
   constructor(private userService: UserService) { }
 
