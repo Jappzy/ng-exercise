@@ -1,11 +1,13 @@
 <div class="app-content">
-  <div class="user-profile" *ngIf="isLoggedIn">
+  <div class="user-profile" *ngIf="auth.user$ | async as user">
     Hey {{ user.firstName }} {{ user.lastName }}! Good day ahead!
   </div>
   <div class="action-btn">
-    <button class="app-btn" *ngIf="!isLoggedIn" (click)="login()">Login</button>
-    <button class="app-btn" *ngIf="isLoggedIn" (click)="logout()">
+    <button *ngIf="auth.user$ | async; else loggedOut" class="app-btn" (click)="auth.logout()">
       Logout
     </button>
+    <ng-template #loggedOut>
+      <button class="app-btn" (click)="auth.login()">Login</button>
+    </ng-template>
   </div>
 </div>
